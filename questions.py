@@ -1,411 +1,4 @@
-3: {  # Fase 3: Agir - Ações físicas e interações práticas (revisado)
-        "intimidade": [
-            {
-                "text": "💋 Beijem-se apaixonadamente por 1 minuto completo sem parar",
-                "points": 4,
-                "action": "Cronometrem e intensifiquem a cada segundo"
-            },
-            {
-                "text": "🤗 Abracem-se pele com pele por 3 minutos em completo silêncio",
-                "points": 4,
-                "action": "Sintam o coração um do outro batendo"
-            },
-            {
-                "text": "👁️ Olhem nos olhos um do outro por 5 minutos sem falar nem rir",
-                "points": 5,
-                "action": "Deixem as almas se conectarem através do olhar"
-            },
-            {
-                "text": "💆 Façam massagem sensual um no outro por 10 minutos",
-                "points": 4,
-                "action": "Explorem cada parte do corpo com carinho"
-            },
-            {
-                "text": "🌹 Sussurrem suas maiores verdades íntimas no ouvido",
-                "points": 5,
-                "action": "Compartilhem segredos que nunca contaram"
-            },
-            {
-                "text": "💫 Dancem juntos uma música lenta completamente colados",
-                "points": 3,
-                "action": "Movam-se como se fossem um só corpo"
-            },
-            {
-                "text": "🔥 Explorem-se através de carícias por 5 minutos",
-                "points": 5,
-                "action": "Descubram novas zonas erógenas um do outro"
-            },
-            {
-                "text": "💋 Beijem 7 partes diferentes do corpo um do outro",
-                "points": 4,
-                "action": "Comecem suave e aumentem a intensidade"
-            },
-            {
-                "text": "🌙 Respirem sincronizados por 5 minutos",
-                "points": 3,
-                "action": "Encostem as testas e encontrem o mesmo ritmo"
-            },
-            {
-                "text": "💓 Coloquem as mãos no coração um do outro simultaneamente",
-                "points": 4,
-                "action": "Façam uma promessa de amor eterno"
-            }
-        ],
-        "publico": [
-            {
-            {
-                "text": "👂 Sussurrem suas maiores fantasias românticas no ouvido",
-                "points": 4,
-                "action": "Falem tão baixo que só vocês dois ouçam"
-            },
-            {
-                "text": "😘 Troquem 15 beijos diferentes (testa, bochechas, lábios, mãos)",
-                "points": 3,
-                "action": "Sejam criativos mas discretos"
-            },
-            {
-                "text": "📱 Tirem 10 selfies românticas em poses diferentes",
-                "points": 2,
-                "action": "Capturem a paixão de vocês"
-            },
-            {
-                "text": "🎵 Cantem baixinho uma música especial só para vocês",
-                "points": 2,
-                "action": "Criem uma bolha romântica ao redor de vocês"
-            },
-            {
-                "text": "👁️ Façam uma batalha de sedução apenas com o olhar",
-                "points": 3,
-                "action": "Quem desviar primeiro deve sussurrar 'eu te amo'"
-            },
-            {
-                "text": "💌 Escrevam 'EU TE DESEJO' na palma da mão um do outro",
-                "points": 3,
-                "action": "Usem apenas o dedo indicador sensualmente"
-            },
-            {
-                "text": "🌹 Alimentem um ao outro de forma sensual",
-                "points": 3,
-                "action": "Olhem nos olhos enquanto fazem isso"
-            },
-            {
-                "text": "🤗 Abracem-se por baixo da mesa discretamente",
-                "points": 2,
-                "action": "Sintam o calor um do outro"
-            },
-            {
-                "text": "💫 Façam promessas românticas sussurrando",
-                "points": 4,
-                "action": "Prometam coisas especiais para mais tarde"
-            }
-        ],
-        "casa": [
-            {
-                "text": "🛋️ Assistam ao pôr do sol abraçados em silêncio completo",
-                "points": 3,
-                "action": "Apenas sintam a presença um do outro"
-            },
-            {
-                "text": "🍳 Cozinhem algo juntos se alimentando mutuamente",
-                "points": 2,
-                "action": "Provem na boca um do outro carinhosamente"
-            },
-            {
-                "text": "🛁 Preparem um banho romântico com velas",
-                "points": 4,
-                "action": "Relaxem juntos na água morna"
-            },
-            {
-                "text": "💃 Dancem pela casa sem música, só no ritmo do coração",
-                "points": 3,
-                "action": "Deixem os corpos se guiarem"
-            },
-            {
-                "text": "🕯️ Acendam velas e façam massagem com óleo",
-                "points": 5,
-                "action": "Revezem e explorem cada centímetro"
-            },
-            {
-                "text": "🛏️ Deitem abraçados e compartilhem seus sonhos mais profundos",
-                "points": 3,
-                "action": "Falem olhando para o teto, bem juntinhos"
-            },
-            {
-                "text": "📚 Leiam poesia romântica um para o outro na cama",
-                "points": 2,
-                "action": "Escolham versos que descrevam seu amor"
-            },
-            {
-                "text": "🎨 'Desenhem' um no corpo do outro usando apenas as mãos",
-                "points": 4,
-                "action": "Criem arte com carícias suaves"
-            },
-            {
-                "text": "☕ Preparem uma bebida quente e compartilhem a mesma xícara",
-                "points": 2,
-                "action": "Sintam o gosto nos lábios um do outro"
-            },
-            {
-                "text": "🌙 Contem estrelas pela janela fazendo pedidos juntos",
-                "points": 2,
-                "action": "Cada estrela um desejo para vocês dois"
-            }
-        ],
-        "distancia": [
-            {
-                "text": "👋 Mandem beijos e acenem por 2 minutos sem parar",
-                "points": 2,
-                "action": "Sejam criativos com poses e expressões"
-            },
-            {
-                "text": "🎵 Cantem uma música especial juntos em sincronia perfeita",
-                "points": 3,
-                "action": "Escolham uma que represente vocês"
-            },
-            {
-                "text": "💋 Criem 20 tipos diferentes de beijos pela tela",
-                "points": 3,
-                "action": "Sejam apaixonados e criativos"
-            },
-            {
-                "text": "📱 Escrevam 'EU TE AMO' em idiomas diferentes simultaneamente",
-                "points": 2,
-                "action": "Mostrem na tela ao mesmo tempo"
-            },
-            {
-                "text": "👁️ Façam uma sessão de 5 minutos apenas se olhando",
-                "points": 4,
-                "action": "Conectem-se através da tela em silêncio"
-            },
-            {
-                "text": "🌙 Olhem para a lua/sol ao mesmo tempo por 3 minutos",
-                "points": 3,
-                "action": "Cada um na sua janela, conectados pelo céu"
-            },
-            {
-                "text": "💌 Escrevam uma carta de amor de 5 linhas em tempo real",
-                "points": 4,
-                "action": "Cada um escreve e depois leem juntos"
-            },
-            {
-                "text": "🕯️ Acendam uma vela cada um e façam um ritual",
-                "points": 3,
-                "action": "Criem um momento sagrado à distância"
-            },
-            {
-                "text": "🤗 Abracem uma almofada por 3 minutos imaginando que é o outro",
-                "points": 4,
-                "action": "Fechem os olhos e sintam a presença"
-            },
-            {
-                "text": "💭 Meditem juntos por 5 minutos respirando no mesmo ritmo",
-                "points": 3,
-                "action": "Sincronizem através da tela e se conectem espiritualmente"
-            }
-        ]
-    }
-}    2: {  # Fase 2: Desejar - Perguntas sensuais e provocativas (revisado)
-        "intimidade": [
-            {
-                "text": "🔥 Qual é o momento mais intenso de desejo que você já sentiu por mim?",
-                "points": 4,
-                "action": "Olhem nos olhos e compartilhem esse sentimento"
-            },
-            {
-                "text": "💋 Como você gostaria que eu te beijasse neste momento?",
-                "points": 3,
-                "action": "Demonstrem com um beijo apaixonado"
-            },
-            {
-                "text": "🌶️ Qual é a fantasia romântica mais ousada que você tem comigo?",
-                "points": 4
-            },
-            {
-                "text": "👁️ O que mais te seduz no meu jeito de ser?",
-                "points": 3,
-                "action": "Seduzam um ao outro com esse aspecto"
-            },
-            {
-                "text": "🌟 Qual parte do meu corpo você mais ama tocar carinhosamente?",
-                "points": 3,
-                "action": "Façam carícias suaves nessa parte"
-            },
-            {
-                "text": "💫 Se pudéssemos ser completamente vulneráveis agora, o que você compartilharia?",
-                "points": 4,
-                "action": "Abram seus corações completamente"
-            },
-            {
-                "text": "🔥 Qual palavra sussurrada no seu ouvido te deixa mais excitado(a)?",
-                "points": 3,
-                "action": "Sussurrem essas palavras sensualmente"
-            },
-            {
-                "text": "💭 Em que você pensa quando deseja minha presença física?",
-                "points": 3,
-                "action": "Mostrem através de toques carinhosos"
-            },
-            {
-                "text": "🌹 Como você quer ser seduzido(a) por mim?",
-                "points": 4,
-                "action": "Comecem essa sedução agora"
-            },
-            {
-                "text": "💓 Qual é o seu desejo mais profundo em relação ao nosso amor?",
-                "points": 4,
-                "action": "Prometam realizar esse desejo juntos"
-            }
-        ],
-        "publico": [
-            {
-                "text": "😏 Se pudéssemos sair daqui agora, qual seria nosso destino romântico?",
-                "points": 3,
-                "action": "Planejem essa escapada romântica"
-            },
-            {
-                "text": "💭 Qual é o pensamento mais romântico que você está tendo sobre mim agora?",
-                "points": 3,
-                "action": "Sussurrem discretamente no ouvido"
-            },
-            {
-                "text": "🌹 Como você gostaria de me conquistar se nos conhecêssemos hoje?",
-                "points": 3,
-                "action": "Reconquistem um ao outro agora"
-            },
-            {
-                "text": "🔥 Qual gesto meu te deixa mais apaixonado(a)?",
-                "points": 2,
-                "action": "Façam esse gesto agora"
-            },
-            {
-                "text": "💋 Se eu te beijasse apaixonadamente agora, como você reagiria?",
-                "points": 3,
-                "action": "Testem com um beijo discreto mas intenso"
-            },
-            {
-                "text": "😈 Qual é o seu plano de sedução para quando chegarmos em casa?",
-                "points": 4
-            },
-            {
-                "text": "🌶️ O que você mais quer me sussurrar no ouvido quando estivermos sozinhos?",
-                "points": 3,
-                "action": "Deem uma prévia bem baixinho"
-            },
-            {
-                "text": "🔮 Como você está se sentindo pensando em nossa intimidade?",
-                "points": 3,
-                "action": "Expressem através de carícias discretas"
-            },
-            {
-                "text": "💦 Qual é a coisa mais romântica que você quer fazer comigo hoje?",
-                "points": 4
-            },
-            {
-                "text": "🌡️ De 1 a 10, quanto você me deseja neste momento?",
-                "points": 3,
-                "action": "Mostrem a intensidade através do olhar"
-            }
-        ],
-        "casa": [
-            {
-                "text": "🛏️ Qual ambiente da casa deixa você mais romântico(a) comigo?",
-                "points": 3,
-                "action": "Vão até lá e criem esse clima"
-            },
-            {
-                "text": "🌙 Como você imagina nossa noite perfeita de intimidade?",
-                "points": 4,
-                "action": "Comecem a criar essa atmosfera"
-            },
-            {
-                "text": "💋 Onde na casa você mais gosta de me beijar apaixonadamente?",
-                "points": 3,
-                "action": "Vão lá e realizem esse beijo"
-            },
-            {
-                "text": "🔥 Qual é o seu jeito favorito de me seduzir em casa?",
-                "points": 4,
-                "action": "Demonstrem agora"
-            },
-            {
-                "text": "🛁 Como seria nosso momento de relaxamento mais íntimo?",
-                "points": 3,
-                "action": "Preparem esse ambiente juntos"
-            },
-            {
-                "text": "😈 Qual surpresa romântica você mais quer me fazer em casa?",
-                "points": 3,
-                "action": "Deem uma amostra dessa surpresa"
-            },
-            {
-                "text": "💦 Em que momento em casa você se sente mais conectado(a) comigo?",
-                "points": 3,
-                "action": "Recriem esse momento agora"
-            },
-            {
-                "text": "🌶️ Qual é o seu ritual de sedução favorito que fazemos em casa?",
-                "points": 4,
-                "action": "Iniciem esse ritual"
-            },
-            {
-                "text": "🔓 Qual é o segredo romântico que você tem sobre nossos momentos íntimos?",
-                "points": 4
-            },
-            {
-                "text": "💀 Se esta fosse nossa última noite juntos, como a tornaríamos inesquecível?",
-                "points": 5,
-                "action": "Comecem a criar essa memória especial"
-            }
-        ],
-        "distancia": [
-            {
-                "text": "💻 Como você gostaria de me seduzir através da tela?",
-                "points": 4,
-                "action": "Demonstrem agora de forma sensual"
-            },
-            {
-                "text": "😈 Qual é a coisa mais romântica que você quer me dizer agora?",
-                "points": 3,
-                "action": "Digam olhando diretamente na câmera"
-            },
-            {
-                "text": "🔥 Qual parte da nossa intimidade virtual você mais aprecia?",
-                "points": 3
-            },
-            {
-                "text": "💋 Como você imagina nosso próximo beijo quando nos encontrarmos?",
-                "points": 4,
-                "action": "Mandem um beijo intenso pela tela"
-            },
-            {
-                "text": "🌙 Qual é a sua fantasia mais romântica sobre nosso reencontro?",
-                "points": 4
-            },
-            {
-                "text": "💫 O que mais te faz desejar minha presença física?",
-                "points": 4
-            },
-            {
-                "text": "🔮 Como você se sente quando me vê através da tela?",
-                "points": 3,
-                "action": "Expressem esse sentimento com gestos"
-            },
-            {
-                "text": "🌹 Qual é a mensagem mais apaixonada que você quer me enviar?",
-                "points": 3,
-                "action": "Escrevam e mostrem na tela"
-            },
-            {
-                "text": "💭 Em que você mais pensa quando sente saudade de mim?",
-                "points": 4
-            },
-            {
-                "text": "🔥 Como será nosso momento de reconexão física mais intenso?",
-                "points": 5,
-                "action": "Planejem esse momento em detalhes românticos"
-            }
-        ]
-    },"""
+"""
 Sistema de perguntas do jogo 10 Dates: Conexão Profunda
 Organizadas por fase e ambiente para máxima personalização
 """
@@ -617,402 +210,412 @@ QUESTIONS = {
     2: {  # Fase 2: Desejar - Perguntas sensuais e provocativas
         "intimidade": [
             {
-                "text": "🔥 Se você pudesse me amarrar e fazer qualquer coisa comigo, o que faria primeiro?",
-                "points": 5,
-                "action": "Demonstrem suavemente com as mãos o que fariam"
-            },
-            {
-                "text": "💋 Qual é o gemido meu que mais te excita e onde você quer ouvir ele?",
+                "text": "🔥 Qual é o momento mais intenso de desejo que você já sentiu por mim?",
                 "points": 4,
-                "action": "Sussurrem no ouvido imitando esse som"
+                "action": "Olhem nos olhos e compartilhem esse sentimento"
             },
             {
-                "text": "🌶️ Qual é a posição sexual mais degradante que você quer experimentar comigo?",
-                "points": 5
+                "text": "💋 Como você gostaria que eu te beijasse neste momento?",
+                "points": 3,
+                "action": "Demonstrem com um beijo apaixonado"
             },
             {
-                "text": "👁️ Descreva em detalhes como você quer que eu te seduza na próxima vez?",
+                "text": "🌶️ Qual é a fantasia romântica mais ousada que você tem comigo?",
+                "points": 4
+            },
+            {
+                "text": "👁️ O que mais te seduz no meu jeito de ser?",
+                "points": 3,
+                "action": "Seduzam um ao outro com esse aspecto"
+            },
+            {
+                "text": "🌟 Qual parte do meu corpo você mais ama tocar carinhosamente?",
+                "points": 3,
+                "action": "Façam carícias suaves nessa parte"
+            },
+            {
+                "text": "💫 Se pudéssemos ser completamente vulneráveis agora, o que você compartilharia?",
                 "points": 4,
-                "action": "Comecem a sedução agora mesmo"
+                "action": "Abram seus corações completamente"
             },
             {
-                "text": "🔓 Qual é o fetiche mais estranho que você tem comigo mas tem vergonha de admitir?",
-                "points": 5
+                "text": "🔥 Qual palavra sussurrada no seu ouvido te deixa mais excitado(a)?",
+                "points": 3,
+                "action": "Sussurrem essas palavras sensualmente"
             },
             {
-                "text": "💦 Em qual parte do meu corpo você mais gosta de gozar e por quê?",
+                "text": "💭 Em que você pensa quando deseja minha presença física?",
+                "points": 3,
+                "action": "Mostrem através de toques carinhosos"
+            },
+            {
+                "text": "🌹 Como você quer ser seduzido(a) por mim?",
                 "points": 4,
-                "action": "Toquem essa parte com desejo"
+                "action": "Comecem essa sedução agora"
             },
             {
-                "text": "😈 Se eu fosse sua escrava sexual por uma noite, qual seria seu primeiro comando?",
-                "points": 5,
-                "action": "Deem esse comando agora e obedeçam"
-            },
-            {
-                "text": "🌙 Qual é a fantasia sexual mais suja que você tem comigo mas nunca contou?",
-                "points": 5
-            },
-            {
-                "text": "🔥 Como você quer que eu gema seu nome na próxima vez que transarmos?",
+                "text": "💓 Qual é o seu desejo mais profundo em relação ao nosso amor?",
                 "points": 4,
-                "action": "Mostrem agora como querem ouvir"
-            },
-            {
-                "text": "💀 Se eu morresse e você pudesse me foder uma última vez, como seria?",
-                "points": 5,
-                "action": "Façam amor como se fosse a última vez"
+                "action": "Prometam realizar esse desejo juntos"
             }
         ],
         "publico": [
             {
-                "text": "😏 Se eu deslizasse minha mão pela sua coxa agora, como você reagiria?",
-                "points": 4,
-                "action": "Testem discretamente por baixo da mesa"
-            },
-            {
-                "text": "💭 Qual é a coisa mais suja que você está pensando em fazer comigo quando sairmos daqui?",
-                "points": 4,
-                "action": "Sussurrem bem baixinho no ouvido"
-            },
-            {
-                "text": "🌹 Se eu sussurrasse algo muito safado no seu ouvido agora, o que gostaria de ouvir?",
-                "points": 4,
-                "action": "Sussurrem isso agora e vejam a reação"
-            },
-            {
-                "text": "🔥 Qual parte da minha roupa você mais quer arrancar quando chegarmos em casa?",
+                "text": "😏 Se pudéssemos sair daqui agora, qual seria nosso destino romântico?",
                 "points": 3,
-                "action": "Indiquem discretamente tocando de leve"
+                "action": "Planejem essa escapada romântica"
             },
             {
-                "text": "💋 Se eu te beijasse com língua agora mesmo, você conseguiria se controlar?",
-                "points": 4,
-                "action": "Testem com um beijo rápido mas intenso"
-            },
-            {
-                "text": "😈 Qual é a posição que você mais quer me comer hoje à noite?",
-                "points": 5
-            },
-            {
-                "text": "🌶️ Se eu não estivesse usando calcinha agora, como isso te afetaria?",
-                "points": 4,
-                "action": "Contem se é verdade ou mentira"
-            },
-            {
-                "text": "🔮 O que você faria se eu começasse a gemer baixinho agora?",
-                "points": 4,
-                "action": "Façam um gemidinho quase inaudível"
-            },
-            {
-                "text": "💦 Se pudéssemos transar no banheiro daqui, você toparia?",
-                "points": 5,
-                "action": "Planejem como fariam sem ser pegos"
-            },
-            {
-                "text": "🌡️ De 1 a 10, o quanto você está excitado(a) agora pensando em mim?",
+                "text": "💭 Qual é o pensamento mais romântico que você está tendo sobre mim agora?",
                 "points": 3,
-                "action": "Mostrem através do toque das mãos"
+                "action": "Sussurrem discretamente no ouvido"
+            },
+            {
+                "text": "🌹 Como você gostaria de me conquistar se nos conhecêssemos hoje?",
+                "points": 3,
+                "action": "Reconquistem um ao outro agora"
+            },
+            {
+                "text": "🔥 Qual gesto meu te deixa mais apaixonado(a)?",
+                "points": 2,
+                "action": "Façam esse gesto agora"
+            },
+            {
+                "text": "💋 Se eu te beijasse apaixonadamente agora, como você reagiria?",
+                "points": 3,
+                "action": "Testem com um beijo discreto mas intenso"
+            },
+            {
+                "text": "😈 Qual é o seu plano de sedução para quando chegarmos em casa?",
+                "points": 4
+            },
+            {
+                "text": "🌶️ O que você mais quer me sussurrar no ouvido quando estivermos sozinhos?",
+                "points": 3,
+                "action": "Deem uma prévia bem baixinho"
+            },
+            {
+                "text": "🔮 Como você está se sentindo pensando em nossa intimidade?",
+                "points": 3,
+                "action": "Expressem através de carícias discretas"
+            },
+            {
+                "text": "💦 Qual é a coisa mais romântica que você quer fazer comigo hoje?",
+                "points": 4
+            },
+            {
+                "text": "🌡️ De 1 a 10, quanto você me deseja neste momento?",
+                "points": 3,
+                "action": "Mostrem a intensidade através do olhar"
             }
         ],
         "casa": [
             {
-                "text": "🛏️ Qual é o nosso canto mais íntimo da casa?",
+                "text": "🛏️ Qual ambiente da casa deixa você mais romântico(a) comigo?",
                 "points": 3,
-                "action": "Vão até lá e se abracem bem apertado"
+                "action": "Vão até lá e criem esse clima"
             },
             {
-                "text": "🌙 Como seria nossa noite perfeita em casa?",
-                "points": 2
+                "text": "🌙 Como você imagina nossa noite perfeita de intimidade?",
+                "points": 4,
+                "action": "Comecem a criar essa atmosfera"
             },
             {
-                "text": "💋 Onde na casa você mais gosta de me beijar?",
-                "points": 2,
-                "action": "Vão até lá e se beijem"
+                "text": "💋 Onde na casa você mais gosta de me beijar apaixonadamente?",
+                "points": 3,
+                "action": "Vão lá e realizem esse beijo"
             },
             {
-                "text": "🔥 Qual roupa minha te deixa mais excitado(a)?",
-                "points": 3
+                "text": "🔥 Qual é o seu jeito favorito de me seduzir em casa?",
+                "points": 4,
+                "action": "Demonstrem agora"
             },
             {
-                "text": "🛁 Como seria nosso banho dos sonhos juntos?",
-                "points": 3
+                "text": "🛁 Como seria nosso momento de relaxamento mais íntimo?",
+                "points": 3,
+                "action": "Preparem esse ambiente juntos"
             },
             {
-                "text": "🕯️ Qual seria o clima perfeito para uma noite romântica?",
-                "points": 2,
-                "action": "Criem esse clima agora"
+                "text": "😈 Qual surpresa romântica você mais quer me fazer em casa?",
+                "points": 3,
+                "action": "Deem uma amostra dessa surpresa"
             },
             {
-                "text": "💫 Qual é a posição que mais gostamos de ficar abraçados?",
-                "points": 2,
-                "action": "Fiquem nessa posição por um tempo"
+                "text": "💦 Em que momento em casa você se sente mais conectado(a) comigo?",
+                "points": 3,
+                "action": "Recriem esse momento agora"
             },
             {
-                "text": "🌹 Como você gosta que eu te seduza em casa?",
+                "text": "🌶️ Qual é o seu ritual de sedução favorito que fazemos em casa?",
+                "points": 4,
+                "action": "Iniciem esse ritual"
+            },
+            {
+                "text": "🔓 Qual é o segredo romântico que você tem sobre nossos momentos íntimos?",
                 "points": 4
             },
             {
-                "text": "💭 Qual é o seu momento mais quente que tivemos aqui?",
-                "points": 3
-            },
-            {
-                "text": "🔥 O que mais te excita no nosso ambiente íntimo?",
-                "points": 3
+                "text": "💀 Se esta fosse nossa última noite juntos, como a tornaríamos inesquecível?",
+                "points": 5,
+                "action": "Comecem a criar essa memória especial"
             }
         ],
         "distancia": [
             {
                 "text": "💻 Como você gostaria de me seduzir através da tela?",
-                "points": 3
+                "points": 4,
+                "action": "Demonstrem agora de forma sensual"
             },
             {
-                "text": "🔥 Qual mensagem minha te deixou mais excitado(a)?",
-                "points": 3
-            },
-            {
-                "text": "👁️ Como é o olhar que mais te provoca pela câmera?",
-                "points": 2,
-                "action": "Façam esse olhar agora"
-            },
-            {
-                "text": "💋 Se pudesse me beijar através da tela, como seria?",
+                "text": "😈 Qual é a coisa mais romântica que você quer me dizer agora?",
                 "points": 3,
-                "action": "Mandem um beijo especial"
+                "action": "Digam olhando diretamente na câmera"
             },
             {
-                "text": "🌙 Como seria nossa ligação mais íntima?",
+                "text": "🔥 Qual parte da nossa intimidade virtual você mais aprecia?",
                 "points": 3
+            },
+            {
+                "text": "💋 Como você imagina nosso próximo beijo quando nos encontrarmos?",
+                "points": 4,
+                "action": "Mandem um beijo intenso pela tela"
+            },
+            {
+                "text": "🌙 Qual é a sua fantasia mais romântica sobre nosso reencontro?",
+                "points": 4
             },
             {
                 "text": "💫 O que mais te faz desejar minha presença física?",
                 "points": 4
             },
             {
-                "text": "🔮 Em que você pensa quando olha para mim na tela?",
-                "points": 2
+                "text": "🔮 Como você se sente quando me vê através da tela?",
+                "points": 3,
+                "action": "Expressem esse sentimento com gestos"
             },
             {
-                "text": "🌹 Como você descreveria seu desejo por mim agora?",
-                "points": 3
+                "text": "🌹 Qual é a mensagem mais apaixonada que você quer me enviar?",
+                "points": 3,
+                "action": "Escrevam e mostrem na tela"
             },
             {
-                "text": "💭 Qual parte do meu corpo mais sente falta de tocar?",
+                "text": "💭 Em que você mais pensa quando sente saudade de mim?",
                 "points": 4
             },
             {
-                "text": "🔥 Como seria nosso reencontro mais apaixonado?",
-                "points": 4
+                "text": "🔥 Como será nosso momento de reconexão física mais intenso?",
+                "points": 5,
+                "action": "Planejem esse momento em detalhes românticos"
             }
         ]
     },
     3: {  # Fase 3: Agir - Ações físicas e interações práticas
         "intimidade": [
             {
-                "text": "💋 Beijem-se por 30 segundos sem parar",
-                "points": 3,
-                "action": "Cronometrem e aproveitem cada segundo"
-            },
-            {
-                "text": "🤗 Abracem-se em completo silêncio por 1 minuto",
-                "points": 2,
-                "action": "Sintam a respiração um do outro"
-            },
-            {
-                "text": "👁️ Olhem nos olhos um do outro por 2 minutos sem falar",
+                "text": "💋 Beijem-se apaixonadamente por 1 minuto completo sem parar",
                 "points": 4,
-                "action": "Deixem os olhos falarem por vocês"
+                "action": "Cronometrem e intensifiquem a cada segundo"
             },
             {
-                "text": "💆 Façam massagem um no outro por 5 minutos",
-                "points": 3,
-                "action": "Comecem pelos ombros e pescoço"
-            },
-            {
-                "text": "🌹 Sussurrem os três elogios mais íntimos no ouvido",
-                "points": 3,
-                "action": "Falem bem devagar e com carinho"
-            },
-            {
-                "text": "💫 Dancem juntos uma música lenta",
-                "points": 2,
-                "action": "Colem os corpos e se movam no ritmo"
-            },
-            {
-                "text": "🔥 Façam carícias simultâneas por 3 minutos",
+                "text": "🤗 Abracem-se pele com pele por 3 minutos em completo silêncio",
                 "points": 4,
-                "action": "Explorem com suavidade e intensidade"
+                "action": "Sintam o coração um do outro batendo"
             },
             {
-                "text": "💋 Beijem três partes diferentes do corpo um do outro",
+                "text": "👁️ Olhem nos olhos um do outro por 5 minutos sem falar nem rir",
+                "points": 5,
+                "action": "Deixem as almas se conectarem através do olhar"
+            },
+            {
+                "text": "💆 Façam massagem sensual um no outro por 10 minutos",
+                "points": 4,
+                "action": "Explorem cada parte do corpo com carinho"
+            },
+            {
+                "text": "🌹 Sussurrem suas maiores verdades íntimas no ouvido",
+                "points": 5,
+                "action": "Compartilhem segredos que nunca contaram"
+            },
+            {
+                "text": "💫 Dancem juntos uma música lenta completamente colados",
+                "points": 3,
+                "action": "Movam-se como se fossem um só corpo"
+            },
+            {
+                "text": "🔥 Explorem-se através de carícias por 5 minutos",
+                "points": 5,
+                "action": "Descubram novas zonas erógenas um do outro"
+            },
+            {
+                "text": "💋 Beijem 7 partes diferentes do corpo um do outro",
                 "points": 4,
                 "action": "Comecem suave e aumentem a intensidade"
             },
             {
-                "text": "🌙 Respirem juntos sincronizados por 2 minutos",
-                "points": 2,
-                "action": "Encostem as testas e respirem como um só"
+                "text": "🌙 Respirem sincronizados por 5 minutos",
+                "points": 3,
+                "action": "Encostem as testas e encontrem o mesmo ritmo"
             },
             {
-                "text": "💓 Sintam o coração um do outro batendo",
-                "points": 3,
-                "action": "Coloquem a mão no peito e sincronizem"
+                "text": "💓 Coloquem as mãos no coração um do outro simultaneamente",
+                "points": 4,
+                "action": "Façam uma promessa de amor eterno"
             }
         ],
         "publico": [
             {
-                "text": "🤝 Segurem as mãos entrelaçadas por 5 minutos",
+                "text": "🤝 Entrelacem os dedos e não se soltem por 10 minutos",
+                "points": 3,
+                "action": "Façam carícias discretas com os polegares"
+            },
+            {
+                "text": "👂 Sussurrem suas maiores fantasias românticas no ouvido",
+                "points": 4,
+                "action": "Falem tão baixo que só vocês dois ouçam"
+            },
+            {
+                "text": "😘 Troquem 15 beijos diferentes (testa, bochechas, lábios, mãos)",
+                "points": 3,
+                "action": "Sejam criativos mas discretos"
+            },
+            {
+                "text": "📱 Tirem 10 selfies românticas em poses diferentes",
                 "points": 2,
-                "action": "Façam carícias discretas com os dedos"
+                "action": "Capturem a paixão de vocês"
             },
             {
-                "text": "👂 Sussurrem algo romântico no ouvido um do outro",
+                "text": "🎵 Cantem baixinho uma música especial só para vocês",
                 "points": 2,
-                "action": "Falem bem baixinho e devagar"
+                "action": "Criem uma bolha romântica ao redor de vocês"
             },
             {
-                "text": "😘 Deem três beijos discretos (rosto, testa, mão)",
+                "text": "👁️ Façam uma batalha de sedução apenas com o olhar",
+                "points": 3,
+                "action": "Quem desviar primeiro deve sussurrar 'eu te amo'"
+            },
+            {
+                "text": "💌 Escrevam 'EU TE DESEJO' na palma da mão um do outro",
+                "points": 3,
+                "action": "Usem apenas o dedo indicador sensualmente"
+            },
+            {
+                "text": "🌹 Alimentem um ao outro de forma sensual",
+                "points": 3,
+                "action": "Olhem nos olhos enquanto fazem isso"
+            },
+            {
+                "text": "🤗 Abracem-se por baixo da mesa discretamente",
                 "points": 2,
-                "action": "Façam com carinho e olhem nos olhos"
+                "action": "Sintam o calor um do outro"
             },
             {
-                "text": "📱 Tirem uma selfie bem juntinhos",
-                "points": 1,
-                "action": "Façam várias poses românticas"
-            },
-            {
-                "text": "🎵 Cantem baixinho uma música especial",
-                "points": 2,
-                "action": "Apenas para vocês dois ouvirem"
-            },
-            {
-                "text": "👁️ Façam uma batalha de olhares apaixonados",
-                "points": 2,
-                "action": "Quem desviar primeiro paga um beijinho"
-            },
-            {
-                "text": "💌 Escrevam uma palavra romântica na mão um do outro",
-                "points": 2,
-                "action": "Usem o dedo como caneta"
-            },
-            {
-                "text": "🌹 Compartilhem o mesmo copo ou prato",
-                "points": 1,
-                "action": "Alimentem um ao outro"
-            },
-            {
-                "text": "🤗 Abracem-se por baixo da mesa",
-                "points": 2,
-                "action": "Discretamente mas com intensidade"
-            },
-            {
-                "text": "💫 Façam um brinde romântico",
-                "points": 1,
-                "action": "Olhem nos olhos e digam algo especial"
+                "text": "💫 Façam promessas românticas sussurrando",
+                "points": 4,
+                "action": "Prometam coisas especiais para mais tarde"
             }
         ],
         "casa": [
             {
-                "text": "🛋️ Assistam ao pôr do sol abraçados na janela",
-                "points": 2,
-                "action": "Em completo silêncio, apenas sentindo"
+                "text": "🛋️ Assistam ao pôr do sol abraçados em silêncio completo",
+                "points": 3,
+                "action": "Apenas sintam a presença um do outro"
             },
             {
                 "text": "🍳 Cozinhem algo juntos se alimentando mutuamente",
                 "points": 2,
-                "action": "Provem na boca um do outro"
+                "action": "Provem na boca um do outro carinhosamente"
             },
             {
-                "text": "🛁 Tomem um banho relaxante juntos",
+                "text": "🛁 Preparem um banho romântico com velas",
                 "points": 4,
-                "action": "Façam massagem um no outro"
+                "action": "Relaxem juntos na água morna"
             },
             {
-                "text": "💃 Dancem pela casa sem música",
-                "points": 2,
-                "action": "Apenas seguindo o ritmo do coração"
+                "text": "💃 Dancem pela casa sem música, só no ritmo do coração",
+                "points": 3,
+                "action": "Deixem os corpos se guiarem"
             },
             {
                 "text": "🕯️ Acendam velas e façam massagem com óleo",
-                "points": 4,
-                "action": "Revezem e curtam cada toque"
+                "points": 5,
+                "action": "Revezem e explorem cada centímetro"
             },
             {
-                "text": "🛏️ Deitem na cama e conversem sobre sonhos",
-                "points": 2,
-                "action": "Abraçados, olhando no teto"
-            },
-            {
-                "text": "📚 Leiam um para o outro na cama",
-                "points": 2,
-                "action": "Escolham algo romântico ou poético"
-            },
-            {
-                "text": "🎨 Desenhem um no corpo do outro",
+                "text": "🛏️ Deitem abraçados e compartilhem seus sonhos mais profundos",
                 "points": 3,
-                "action": "Usem os dedos e muita imaginação"
+                "action": "Falem olhando para o teto, bem juntinhos"
             },
             {
-                "text": "☕ Preparem uma bebida quente e compartilhem",
-                "points": 1,
-                "action": "Bebam na mesma xícara"
-            },
-            {
-                "text": "🌙 Contem estrelas pela janela abraçados",
+                "text": "📚 Leiam poesia romântica um para o outro na cama",
                 "points": 2,
-                "action": "Façam pedidos juntos"
+                "action": "Escolham versos que descrevam seu amor"
+            },
+            {
+                "text": "🎨 'Desenhem' um no corpo do outro usando apenas as mãos",
+                "points": 4,
+                "action": "Criem arte com carícias suaves"
+            },
+            {
+                "text": "☕ Preparem uma bebida quente e compartilhem a mesma xícara",
+                "points": 2,
+                "action": "Sintam o gosto nos lábios um do outro"
+            },
+            {
+                "text": "🌙 Contem estrelas pela janela fazendo pedidos juntos",
+                "points": 2,
+                "action": "Cada estrela um desejo para vocês dois"
             }
         ],
         "distancia": [
             {
-                "text": "👋 Acenem e mandem beijos pela câmera por 1 minuto",
+                "text": "👋 Mandem beijos e acenem por 2 minutos sem parar",
                 "points": 2,
-                "action": "Façam poses românticas e divertidas"
+                "action": "Sejam criativos com poses e expressões"
             },
             {
-                "text": "🎵 Cantem uma música juntos em sincronia",
-                "points": 2,
-                "action": "Escolham uma música especial de vocês"
-            },
-            {
-                "text": "💋 Mandem 10 beijos diferentes pela tela",
-                "points": 2,
-                "action": "Sejam criativos e apaixonados"
-            },
-            {
-                "text": "📱 Escrevam 'EU TE AMO' ao mesmo tempo",
-                "points": 2,
-                "action": "Mostrem na tela simultaneamente"
-            },
-            {
-                "text": "👁️ Façam uma batalha de caretas românticas",
-                "points": 1,
-                "action": "Quem rir primeiro ganha um beijo virtual"
-            },
-            {
-                "text": "🌙 Olhem para a lua/sol ao mesmo tempo",
+                "text": "🎵 Cantem uma música especial juntos em sincronia perfeita",
                 "points": 3,
-                "action": "Cada um na sua janela, pensando no outro"
+                "action": "Escolham uma que represente vocês"
             },
             {
-                "text": "💌 Escrevam uma carta de amor em tempo real",
+                "text": "💋 Criem 20 tipos diferentes de beijos pela tela",
                 "points": 3,
-                "action": "Cada um escreve e lê para o outro"
+                "action": "Sejam apaixonados e criativos"
             },
             {
-                "text": "🕯️ Acendam uma vela cada um",
+                "text": "📱 Escrevam 'EU TE AMO' em idiomas diferentes simultaneamente",
                 "points": 2,
-                "action": "Façam um ritual romântico juntos"
+                "action": "Mostrem na tela ao mesmo tempo"
             },
             {
-                "text": "🤗 Abracem uma almofada imaginando que é o outro",
+                "text": "👁️ Façam uma sessão de 5 minutos apenas se olhando",
+                "points": 4,
+                "action": "Conectem-se através da tela em silêncio"
+            },
+            {
+                "text": "🌙 Olhem para a lua/sol ao mesmo tempo por 3 minutos",
                 "points": 3,
+                "action": "Cada um na sua janela, conectados pelo céu"
+            },
+            {
+                "text": "💌 Escrevam uma carta de amor de 5 linhas em tempo real",
+                "points": 4,
+                "action": "Cada um escreve e depois leem juntos"
+            },
+            {
+                "text": "🕯️ Acendam uma vela cada um e façam um ritual",
+                "points": 3,
+                "action": "Criem um momento sagrado à distância"
+            },
+            {
+                "text": "🤗 Abracem uma almofada por 3 minutos imaginando que é o outro",
+                "points": 4,
                 "action": "Fechem os olhos e sintam a presença"
             },
             {
-                "text": "💭 Meditem juntos por 3 minutos",
-                "points": 2,
-                "action": "Respirem juntos e se conectem espiritualmente"
+                "text": "💭 Meditem juntos por 5 minutos respirando no mesmo ritmo",
+                "points": 3,
+                "action": "Sincronizem através da tela e se conectem espiritualmente"
             }
         ]
     }
@@ -1117,5 +720,5 @@ if __name__ == "__main__":
         if random_q.get('action'):
             print(f"Ação: {random_q['action']}")
     
-    # Descomentar para ver todas as perguntas
+    # Descomentar para ver todas as perguntas  
     # list_all_questions()
