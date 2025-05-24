@@ -28,25 +28,53 @@ class GameLogic:
             4: {"name": "Êxtase", "emoji": "💥", "min_points": 30, "max_points": float('inf')}
         }
         
-        # Mapeamento de modos vibracionais por nível
+        # Mapeamento de modos vibracionais mais inteligente
         self.vibrator_modes = {
-            1: [1, 2],        # Nível 1: Carinho, admiração
-            2: [3, 4],        # Nível 2: Desejo em ascensão  
-            3: [5, 6],        # Nível 3: Provocação direta e tensão
-            4: [7, 8, 9]      # Nível 4: Clímax emocional e físico
+            1: [1, 2],        # Nível 1: Despertar suave
+            2: [2, 3, 4],     # Nível 2: Crescimento do desejo  
+            3: [4, 5, 6],     # Nível 3: Intensidade e provocação
+            4: [6, 7, 8, 9]   # Nível 4: Êxtase total
         }
         
-        # Descrições dos modos vibracionais
+        # Descrições mais provocativas dos modos vibracionais
         self.vibrator_descriptions = {
-            1: "Carinho suave e delicado",
-            2: "Toque terno e envolvente", 
-            3: "Intensidade crescendo devagar",
-            4: "Sensação mais presente",
-            5: "Temperatura subindo",
-            6: "Provocação direta",
-            7: "Êxtase se aproximando",
-            8: "Clímax intenso",
-            9: "Explosão de prazer"
+            1: "Despertar suave - primeiras sensações",
+            2: "Carinho crescente - o corpo começa a responder", 
+            3: "Calor aumentando - desejo se intensificando",
+            4: "Prazer evidente - corpos respondendo",
+            5: "Fogo interno - tensão sexual crescendo",
+            6: "Provocação direta - controle se perdendo",
+            7: "Êxtase se aproximando - respiração acelerada",
+            8: "Clímax intenso - prazer dominando",
+            9: "Explosão total - entrega completa"
+        }
+        
+        # Mensagens contextuais por ambiente
+        self.environment_vibrator_messages = {
+            "intimidade": {
+                1: "Na intimidade total, deixem o prazer fluir livremente...",
+                2: "Aproveitem cada gemido, cada suspiro...", 
+                3: "O quarto é de vocês - gritem de prazer se quiserem!",
+                4: "Momento de êxtase total - nada mais importa!"
+            },
+            "publico": {
+                1: "O segredinho de vocês... ninguém imagina o que está acontecendo",
+                2: "A adrenalina de sentir prazer em público é única...",
+                3: "Controlem-se... mas sintam a tensão crescer",
+                4: "Quase impossível disfarçar... que delícia perigosa!"
+            },
+            "casa": {
+                1: "Em casa, vocês mandam - deixem o corpo relaxar",
+                2: "Cada cômodo pode virar cenário de prazer...",
+                3: "Transformem o lar no paraíso de vocês",
+                4: "Casa é onde o coração está... e onde o prazer explode!"
+            },
+            "distancia": {
+                1: "A distância torna tudo mais intenso e desejado...",
+                2: "Cada vibração é um beijo que não podem dar...",
+                3: "Sintam-se conectados através do prazer",
+                4: "O orgasmo virtual mais intenso que já tiveram!"
+            }
         }
     
     def add_connection_points(self, points: int) -> None:
@@ -141,24 +169,82 @@ class GameLogic:
         
         return None
     
-    def get_vibrator_suggestion(self) -> Optional[Dict[str, Any]]:
+    def get_vibrator_suggestion(self, environment="intimidade") -> Optional[Dict[str, Any]]:
         """
-        Retorna sugestão completa para vibrador incluindo modo e descrição
+        Retorna sugestão completa para vibrador incluindo modo e descrição contextual
+        
+        Args:
+            environment (str): Ambiente atual do jogo
         
         Returns:
             dict or None: Informações da sugestão vibracional
         """
-        mode = self.get_vibrator_mode()
-        
-        if mode is None:
+        if not self.vibrator_active:
             return None
+            
+        current_level = self.get_connection_level()
+        available_modes = self.vibrator_modes.get(current_level, [])
+        
+        if not available_modes:
+            return None
+        
+        # Escolhe modo baseado na progressão (mais inteligente)
+        if self.questions_answered <= 2:
+            mode = min(available_modes)  # Começa suave
+        elif self.questions_answered >= 6:
+            mode = max(available_modes)  # Termina intenso
+        else:
+            mode = random.choice(available_modes)  # Varia no meio
+        
+        # Mensagem contextual por ambiente
+        env_messages = self.environment_vibrator_messages.get(environment, {})
+        context_message = env_messages.get(current_level, "Aproveitem essa intensidade juntos!")
         
         return {
             "mode": mode,
-            "description": self.vibrator_descriptions.get(mode, "Aproveitem juntos"),
-            "level": self.get_connection_level(),
-            "intensity": self._get_intensity_name(mode)
+            "description": self.vibrator_descriptions.get(mode, "Prazer intenso"),
+            "level": current_level,
+            "intensity": self._get_intensity_name(mode),
+            "context_message": context_message,
+            "phase": self.current_phase,
+            "progression": self._get_progression_message()
         }
+    
+    def _get_progression_message(self) -> str:
+        """Retorna mensagem sobre a progressão do prazer"""
+        total_questions = self.questions_answered
+        
+        if total_questions <= 2:
+            return "Começando a despertar os sentidos..."
+        elif total_questions <= 4:
+            return "O calor está aumentando entre vocês..."
+        elif total_questions <= 6:
+            return "A tensão sexual está crescendo..."
+        elif total_questions <= 8:
+            return "Vocês estão perdendo o controle..."
+        else:
+            return "Momento de êxtase total!"
+    
+    def should_suggest_vibrator(self) -> bool:
+        """
+        Determina se deve sugerir o vibrador baseado na progressão
+        
+        Returns:
+            bool: True se deve sugerir vibrador
+        """
+        if not self.vibrator_active:
+            return False
+        
+        # Sugere vibrador em momentos estratégicos
+        strategic_moments = [
+            self.questions_answered == 1,  # Primeira pergunta
+            self.questions_answered % 3 == 0,  # A cada 3 perguntas
+            self.actions_completed > 0,  # Após ações
+            self.connection_points >= 10,  # Nível médio de conexão
+            self.current_phase >= 2  # Fases mais intensas
+        ]
+        
+        return any(strategic_moments)
     
     def _get_intensity_name(self, mode: int) -> str:
         """
