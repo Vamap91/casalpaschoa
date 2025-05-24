@@ -7,153 +7,160 @@ import random
 
 # Estrutura: QUESTIONS[fase][ambiente] = [lista de perguntas]
 QUESTIONS = {
-    1: {  # Fase 1: Conectar - Perguntas profundas e emocionais
+    1: {  # Fase 1: Conectar - Perguntas profundas para casais maduros
         "intimidade": [
             {
-                "text": "🧠 Qual é o pensamento mais íntimo que você já teve sobre mim mas nunca teve coragem de dizer?",
-                "points": 4,
-                "action": "Olhem nos olhos por 30 segundos em silêncio total"
-            },
-            {
-                "text": "💀 Se você soubesse que ia morrer amanhã, qual seria a última coisa que gostaria de me dizer?",
-                "points": 5,
-                "action": "Abracem-se como se fosse a última vez"
-            },
-            {
-                "text": "🌑 Qual é o seu maior medo sobre nosso relacionamento que você nunca admitiu?",
-                "points": 4
-            },
-            {
-                "text": "🔮 Se pudesse ler minha mente por 5 minutos, em que momento da nossa relação você escolheria?",
+                "text": "💕 Depois de todos esses anos juntos, qual é a coisa mais nova que você descobriu sobre mim recentemente?",
                 "points": 3,
-                "action": "Fechem os olhos e tentem adivinhar o que o outro está pensando"
+                "action": "Compartilhem essa descoberta beijando suavemente"
             },
             {
-                "text": "💔 Qual foi o momento que você mais sentiu que me perderia e como isso te afetou?",
+                "text": "🌟 Se pudéssemos reviver um momento dos nossos primeiros anos de relacionamento, qual você escolheria?",
                 "points": 4,
-                "action": "Segurem as mãos e digam 'eu nunca vou te deixar'"
+                "action": "Recriem uma parte desse momento agora"
             },
             {
-                "text": "🎭 Qual máscara você usa no mundo que só tira comigo?",
-                "points": 3
-            },
-            {
-                "text": "🌊 Se nosso amor fosse um oceano, em que profundidade você acha que estamos agora?",
-                "points": 2,
-                "action": "Mergulhem mais fundo - beijem a testa um do outro"
-            },
-            {
-                "text": "🔥 Qual foi o momento que você percebeu que não conseguiria mais viver sem mim?",
+                "text": "💭 Qual é o medo que você tem sobre nosso futuro juntos que nunca me contou?",
                 "points": 4,
-                "action": "Sussurrem isso no ouvido um do outro"
+                "action": "Segurem as mãos e prometam enfrentar juntos"
             },
             {
-                "text": "🌙 Se pudéssemos voltar ao nosso primeiro encontro sabendo tudo que sabemos hoje, o que você faria diferente?",
-                "points": 3
-            },
-            {
-                "text": "💫 Qual parte da sua alma você sente que eu ainda não conheço completamente?",
+                "text": "🔥 Como nossa intimidade mudou ao longo dos anos? O que você mais sente falta?",
                 "points": 4,
-                "action": "Abram essa parte agora - contem algo muito pessoal"
+                "action": "Conversem sobre como podem resgatar isso"
+            },
+            {
+                "text": "💔 Qual foi o momento mais difícil que passamos e como isso nos fortaleceu?",
+                "points": 5,
+                "action": "Abracem-se e celebrem a superação"
+            },
+            {
+                "text": "🌙 Se tivéssemos que recomeçar nossa vida sexual do zero hoje, como seria?",
+                "points": 4,
+                "action": "Planejem esse 'recomeço' com carícias"
+            },
+            {
+                "text": "💫 Qual sonho que tínhamos no início ainda não realizamos juntos?",
+                "points": 3,
+                "action": "Façam um plano real para realizar"
+            },
+            {
+                "text": "🎭 Como você acha que eu mudei desde que nos conhecemos? E você?",
+                "points": 3,
+                "action": "Elogiem as mudanças positivas um do outro"
+            },
+            {
+                "text": "🔒 Qual segredo sobre nosso relacionamento você guardaria por toda vida?",
+                "points": 4,
+                "action": "Sussurrem esse segredo no ouvido"
+            },
+            {
+                "text": "💖 Se soubesse que teríamos mais 50 anos juntos, o que você mais gostaria de viver comigo?",
+                "points": 4,
+                "action": "Façam uma promessa de amor eterno"
             }
         ],
         "publico": [
             {
-                "text": "😈 Qual é a fantasia mais louca que você tem comigo que as pessoas ao nosso redor jamais imaginariam?",
-                "points": 4,
-                "action": "Sussurrem a resposta bem baixinho no ouvido"
-            },
-            {
-                "text": "🕵️ Se as pessoas pudessem ouvir nossos pensamentos agora, qual seria o mais chocante?",
-                "points": 3
-            },
-            {
-                "text": "💣 Qual foi a mentira mais inofensiva que você já me contou e por quê?",
+                "text": "👫 Olhando para outros casais aqui, o que eles têm que nós não temos? E o que nós temos que eles não têm?",
                 "points": 3,
-                "action": "Contem a verdade agora, olhando nos olhos"
+                "action": "Elogiem discretamente as qualidades únicas de vocês"
             },
             {
-                "text": "🎪 Se tivéssemos que fazer amor em um lugar público sem ser pegos, onde seria?",
+                "text": "💍 Se tivéssemos que renovar nossos votos hoje, o que você prometeria de diferente?",
                 "points": 4,
-                "action": "Planejem isso discretamente"
+                "action": "Façam essas promessas sussurrando"
             },
             {
-                "text": "🔮 Olhando para as pessoas ao redor, qual casal você acha que tem a melhor vida sexual?",
+                "text": "🔥 Qual é a fantasia sexual que você tem comigo que envolve um lugar público como este?",
+                "points": 4,
+                "action": "Planejem discretamente como seria"
+            },
+            {
+                "text": "🌹 Se pudéssemos fugir juntos agora para qualquer lugar do mundo, onde iríamos?",
                 "points": 2,
-                "action": "Apontem discretamente e comparem com vocês"
+                "action": "Planejem essa fuga romântica"
             },
             {
-                "text": "💀 Qual é o segredo mais sombrio que você tem que só eu sei?",
-                "points": 4
-            },
-            {
-                "text": "🌪️ Se pudéssemos causar um escândalo aqui agora, o que faríamos?",
+                "text": "💭 Qual é o pensamento mais safado que você já teve sobre mim em um lugar público?",
                 "points": 3,
-                "action": "Façam algo bem ousado mas discreto"
+                "action": "Contem sussurrando bem baixinho"
             },
             {
-                "text": "🎭 Qual é a coisa mais falsa que você faz na frente dos outros mas nunca comigo?",
+                "text": "👥 Como você acha que as pessoas nos veem como casal? Isso te incomoda?",
+                "points": 2,
+                "action": "Mostrem amor um pelo outro discretamente"
+            },
+            {
+                "text": "🎭 Que papel nós fazemos na frente dos outros que é diferente de quando estamos sozinhos?",
                 "points": 3
             },
             {
-                "text": "💰 Se eu te oferecesse 1 milhão para me deixar agora mesmo, você aceitaria?",
-                "points": 4,
-                "action": "Jurem fidelidade eterna discretamente"
+                "text": "💖 Se eu flertasse com você agora como se não nos conhecêssemos, como você reagiria?",
+                "points": 3,
+                "action": "Flirtem como se fosse a primeira vez"
             },
             {
-                "text": "🔥 Qual pessoa neste ambiente você beijaria se não fosse comprometida, e por quê?",
+                "text": "🌶️ Qual é a coisa mais ousada que já fizemos em público que ninguém sabe?",
+                "points": 4,
+                "action": "Relembrem com sorrisos cúmplices"
+            },
+            {
+                "text": "💑 Se pudéssemos dar um conselho para casais mais jovens, qual seria?",
                 "points": 3,
-                "action": "Prometam que só têm olhos um para o outro"
+                "action": "Apliquem esse conselho em vocês mesmos agora"
             }
         ],
         "casa": [
             {
-                "text": "🔓 Qual é o maior segredo que você esconde no seu celular que eu nunca posso ver?",
-                "points": 4,
-                "action": "Mostrem as mensagens mais íntimas que vocês trocaram"
-            },
-            {
-                "text": "🌡️ Em qual cômodo da casa você mais fantasiou sobre fazer amor comigo?",
+                "text": "🏠 Depois de tantos anos morando juntos, qual cantinho da casa ainda guarda memórias especiais nossas?",
                 "points": 3,
-                "action": "Vão até lá e expliquem a fantasia"
+                "action": "Vão até lá e criem uma nova memória"
             },
             {
-                "text": "💀 Se eu morresse amanhã, qual seria a coisa minha que você guardaria para sempre?",
+                "text": "💑 Se pudéssemos redesenhar nossa rotina de casa para ter mais momentos íntimos, como seria?",
                 "points": 4,
-                "action": "Mostrem esse objeto e expliquem por quê"
+                "action": "Implementem uma mudança pequena agora"
             },
             {
-                "text": "🕳️ Qual é o lugar mais estranho da casa onde você já se masturbou pensando em mim?",
-                "points": 4
-            },
-            {
-                "text": "📱 Se eu pegasse seu histórico de pesquisa agora, qual seria a coisa mais embaraçosa que eu encontraria?",
-                "points": 3,
-                "action": "Confessem e mostrem se tiverem coragem"
-            },
-            {
-                "text": "🔥 Qual é a posição sexual que você mais quer experimentar comigo mas tem vergonha de pedir?",
+                "text": "🔥 Qual foi a transa mais inesquecível que tivemos em casa e o que a tornou especial?",
                 "points": 4,
-                "action": "Sussurrem essa posição no ouvido um do outro"
+                "action": "Vão ao local e relembrem com carinho"
             },
             {
-                "text": "💔 Qual foi o momento em casa que você mais se sentiu distante de mim?",
+                "text": "🌙 Como nossa vida íntima em casa mudou ao longo dos anos?",
                 "points": 3,
-                "action": "Abracem-se bem forte e prometam nunca mais se afastar"
+                "action": "Conversem sobre como reacender a paixão"
             },
             {
-                "text": "🎭 Que persona você usa com sua família que é completamente diferente de quem você é comigo?",
-                "points": 3
-            },
-            {
-                "text": "🌙 Se pudéssemos transar em qualquer lugar da casa sem se preocupar com nada, onde seria?",
+                "text": "💖 Qual tradição nossa em casa você mais ama e nunca quer perder?",
                 "points": 3,
-                "action": "Vão até lá e imaginem a cena juntos"
+                "action": "Pratiquem essa tradição agora"
             },
             {
-                "text": "💣 Qual é a verdade sobre mim que você descobriu mas nunca comentou?",
+                "text": "🛏️ Se pudéssemos transformar nosso quarto no paraíso romântico, o que mudaria?",
+                "points": 3,
+                "action": "Façam uma pequena mudança romântica agora"
+            },
+            {
+                "text": "👫 Como equilibramos vida doméstica e romance depois de tanto tempo juntos?",
+                "points": 2,
+                "action": "Planejem mais momentos românticos em casa"
+            },
+            {
+                "text": "🌹 Qual surpresa romântica em casa você gostaria de me fazer mas nunca fez?",
                 "points": 4,
-                "action": "Contem agora e resolvam isso juntos"
+                "action": "Deem uma amostra dessa surpresa"
+            },
+            {
+                "text": "💑 Se um casal jovem visitasse nossa casa, que conselho sobre amor duradouro daríamos?",
+                "points": 3,
+                "action": "Apliquem esse conselho fazendo algo romântico"
+            },
+            {
+                "text": "🔮 Como você imagina que seremos daqui a 20 anos, ainda nesta casa?",
+                "points": 3,
+                "action": "Façam planos românticos para o futuro"
             }
         ],
         "distancia": [
@@ -207,56 +214,57 @@ QUESTIONS = {
             }
         ]
     },
-    2: {  # Fase 2: Desejar - Perguntas sensuais e provocativas
+    2: {  # Fase 2: Desejar - Romance maduro com sensualidade
         "intimidade": [
             {
-                "text": "🔥 Qual é o momento mais intenso de desejo que você já sentiu por mim?",
+                "text": "💕 Como nosso desejo um pelo outro evoluiu ao longo dos anos? O que mudou?",
                 "points": 4,
-                "action": "Olhem nos olhos e compartilhem esse sentimento"
+                "action": "Mostrem como ainda se desejam com carícias"
             },
             {
-                "text": "💋 Como você gostaria que eu te beijasse neste momento?",
-                "points": 3,
-                "action": "Demonstrem com um beijo apaixonado"
-            },
-            {
-                "text": "🌶️ Qual é a fantasia romântica mais ousada que você tem comigo?",
-                "points": 4
-            },
-            {
-                "text": "👁️ O que mais te seduz no meu jeito de ser?",
-                "points": 3,
-                "action": "Seduzam um ao outro com esse aspecto"
-            },
-            {
-                "text": "🌟 Qual parte do meu corpo você mais ama tocar carinhosamente?",
-                "points": 3,
-                "action": "Façam carícias suaves nessa parte"
-            },
-            {
-                "text": "💫 Se pudéssemos ser completamente vulneráveis agora, o que você compartilharia?",
+                "text": "🔥 Qual foi a época da nossa vida em que mais fizemos amor? Sente falta?",
                 "points": 4,
-                "action": "Abram seus corações completamente"
+                "action": "Planejem como resgatar essa intensidade"
             },
             {
-                "text": "🔥 Qual palavra sussurrada no seu ouvido te deixa mais excitado(a)?",
+                "text": "💋 Se pudéssemos voltar à nossa lua de mel, o que faria diferente na cama?",
                 "points": 3,
-                "action": "Sussurrem essas palavras sensualmente"
+                "action": "Demonstrem com beijos apaixonados"
             },
             {
-                "text": "💭 Em que você pensa quando deseja minha presença física?",
+                "text": "🌹 Qual parte do meu corpo você ainda adora tocar como no primeiro dia?",
                 "points": 3,
-                "action": "Mostrem através de toques carinhosos"
+                "action": "Toquem essa parte com o mesmo desejo de antes"
             },
             {
-                "text": "🌹 Como você quer ser seduzido(a) por mim?",
+                "text": "💫 Como posso seduzir você hoje do jeito que mais gosta depois de tanto tempo?",
                 "points": 4,
-                "action": "Comecem essa sedução agora"
+                "action": "Ensinem um ao outro e pratiquem"
             },
             {
-                "text": "💓 Qual é o seu desejo mais profundo em relação ao nosso amor?",
+                "text": "🔮 Qual fantasia sexual nossa que ainda não realizamos você mais quer tornar real?",
+                "points": 5,
+                "action": "Planejem quando e como realizar"
+            },
+            {
+                "text": "🌙 Em que momento do dia você mais sente vontade de fazer amor comigo?",
+                "points": 3,
+                "action": "Criem esse momento agora"
+            },
+            {
+                "text": "💖 O que mais te excita em mim hoje que não existia quando éramos jovens?",
                 "points": 4,
-                "action": "Prometam realizar esse desejo juntos"
+                "action": "Mostrem essa maturidade sendo sensuais"
+            },
+            {
+                "text": "🔥 Como nossa intimidade sexual pode ficar ainda melhor nos próximos anos?",
+                "points": 4,
+                "action": "Façam uma promessa de paixão renovada"
+            },
+            {
+                "text": "💕 Se tivéssemos que ensinar sobre amor maduro para um casal jovem, qual seria nosso segredo?",
+                "points": 3,
+                "action": "Pratiquem esse segredo agora mesmo"
             }
         ],
         "publico": [
@@ -311,53 +319,54 @@ QUESTIONS = {
         ],
         "casa": [
             {
-                "text": "🛏️ Qual ambiente da casa deixa você mais romântico(a) comigo?",
-                "points": 3,
-                "action": "Vão até lá e criem esse clima"
+                "text": "🛏️ Nosso quarto ainda é um santuário de amor ou virou apenas lugar de dormir?",
+                "points": 4,
+                "action": "Transformem o quarto num ambiente romântico agora"
             },
             {
-                "text": "🌙 Como você imagina nossa noite perfeita de intimidade?",
+                "text": "🌙 Qual é o horário do dia que vocês mais faziam amor antes e por que parou?",
                 "points": 4,
+                "action": "Resgatem esse horário especial"
+            },
+            {
+                "text": "💋 Se pudéssemos criar um ritual semanal de sedução em casa, como seria?",
+                "points": 4,
+                "action": "Iniciem esse ritual agora"
+            },
+            {
+                "text": "🔥 Qual cômodo da casa tem o maior potencial romântico inexplorado?",
+                "points": 3,
+                "action": "Vão lá e explorem esse potencial"
+            },
+            {
+                "text": "🛁 Como seria nosso banho romântico perfeito depois de tantos anos?",
+                "points": 3,
+                "action": "Planejem e preparem esse momento"
+            },
+            {
+                "text": "🍷 Se criássemos uma noite temática romântica em casa, qual seria o tema?",
+                "points": 3,
                 "action": "Comecem a criar essa atmosfera"
             },
             {
-                "text": "💋 Onde na casa você mais gosta de me beijar apaixonadamente?",
-                "points": 3,
-                "action": "Vão lá e realizem esse beijo"
-            },
-            {
-                "text": "🔥 Qual é o seu jeito favorito de me seduzir em casa?",
+                "text": "💕 Como podemos trazer mais espontaneidade para nossa vida íntima em casa?",
                 "points": 4,
-                "action": "Demonstrem agora"
+                "action": "Sejam espontâneos agora mesmo"
             },
             {
-                "text": "🛁 Como seria nosso momento de relaxamento mais íntimo?",
-                "points": 3,
-                "action": "Preparem esse ambiente juntos"
-            },
-            {
-                "text": "😈 Qual surpresa romântica você mais quer me fazer em casa?",
-                "points": 3,
+                "text": "🌹 Qual surpresa romântica caseira você gostaria de me fazer mas nunca fez?",
+                "points": 4,
                 "action": "Deem uma amostra dessa surpresa"
             },
             {
-                "text": "💦 Em que momento em casa você se sente mais conectado(a) comigo?",
+                "text": "🔮 Como você imagina nossa intimidade doméstica daqui a 10 anos?",
                 "points": 3,
-                "action": "Recriem esse momento agora"
+                "action": "Façam planos para manter a paixão acesa"
             },
             {
-                "text": "🌶️ Qual é o seu ritual de sedução favorito que fazemos em casa?",
-                "points": 4,
-                "action": "Iniciem esse ritual"
-            },
-            {
-                "text": "🔓 Qual é o segredo romântico que você tem sobre nossos momentos íntimos?",
-                "points": 4
-            },
-            {
-                "text": "💀 Se esta fosse nossa última noite juntos, como a tornaríamos inesquecível?",
-                "points": 5,
-                "action": "Comecem a criar essa memória especial"
+                "text": "💖 Qual é o maior mito sobre casais de longa data que nós quebramos?",
+                "points": 3,
+                "action": "Provem quebrando esse mito agora"
             }
         ],
         "distancia": [
