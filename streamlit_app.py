@@ -15,12 +15,13 @@ st.set_page_config(
 st.markdown("""
 <style>
     /* Importar fontes modernas */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
     
     /* Reset e base */
     .stApp {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         font-family: 'Inter', sans-serif;
+        min-height: 100vh;
     }
     
     /* Container principal */
@@ -28,7 +29,8 @@ st.markdown("""
         background: rgba(255, 255, 255, 0.95);
         border-radius: 24px;
         padding: 2rem;
-        margin: 1rem;
+        margin: 1rem auto;
+        max-width: 800px;
         box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255,255,255,0.2);
@@ -36,7 +38,8 @@ st.markdown("""
     
     /* Títulos */
     .main-title {
-        font-size: 2.5rem;
+        font-family: 'Playfair Display', serif;
+        font-size: 3rem;
         font-weight: 700;
         background: linear-gradient(135deg, #ff6b6b, #ee5a52);
         -webkit-background-clip: text;
@@ -52,189 +55,394 @@ st.markdown("""
         text-align: center;
         margin-bottom: 2rem;
         font-weight: 400;
+        line-height: 1.5;
     }
     
     /* Cards de ambiente */
+    .environment-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin: 2rem 0;
+    }
+    
     .environment-card {
         background: white;
-        border-radius: 16px;
-        padding: 1.5rem;
-        margin: 0.5rem 0;
+        border-radius: 20px;
+        padding: 2rem;
+        text-align: center;
         box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-        border: 2px solid transparent;
-        transition: all 0.3s ease;
+        border: 3px solid transparent;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .environment-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 107, 107, 0.1), transparent);
+        transition: left 0.5s;
+    }
+    
+    .environment-card:hover::before {
+        left: 100%;
     }
     
     .environment-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 15px 40px rgba(255, 107, 107, 0.2);
         border-color: #ff6b6b;
     }
     
     .environment-card.selected {
         border-color: #ff6b6b;
         background: linear-gradient(135deg, #fff5f5, #ffffff);
+        transform: scale(1.05);
     }
     
     /* Ícones de ambiente */
     .env-icon {
-        font-size: 3rem;
+        font-size: 4rem;
         margin-bottom: 1rem;
         display: block;
         text-align: center;
+        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
     }
     
     .env-title {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         font-weight: 600;
         color: #2c3e50;
-        text-align: center;
         margin-bottom: 0.5rem;
     }
     
     .env-description {
         color: #6c757d;
-        text-align: center;
-        font-size: 0.9rem;
-        line-height: 1.4;
+        font-size: 0.95rem;
+        line-height: 1.5;
     }
     
     /* Cards de pergunta */
     .question-card {
         background: linear-gradient(135deg, #667eea, #764ba2);
         color: white;
-        border-radius: 20px;
-        padding: 2rem;
-        margin: 1.5rem 0;
-        box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+        border-radius: 24px;
+        padding: 2.5rem;
+        margin: 2rem 0;
+        box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
         text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .question-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    
+    .question-card:hover::before {
+        opacity: 1;
     }
     
     .question-text {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         font-weight: 500;
         line-height: 1.6;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .question-action {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 1.5rem;
+        border-radius: 16px;
+        margin: 1.5rem 0;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+    }
+    
+    .question-action strong {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
     }
     
     /* Fase atual */
     .phase-indicator {
         background: linear-gradient(90deg, #ff6b6b, #ee5a52);
         color: white;
-        padding: 0.5rem 1.5rem;
-        border-radius: 25px;
+        padding: 0.75rem 2rem;
+        border-radius: 30px;
         font-weight: 600;
         display: inline-block;
         margin-bottom: 1rem;
-        font-size: 0.9rem;
+        font-size: 1rem;
+        box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
     }
     
     /* Nível de conexão */
     .connection-level {
         background: rgba(255, 107, 107, 0.1);
         border: 2px solid #ff6b6b;
-        border-radius: 15px;
-        padding: 1rem;
+        border-radius: 20px;
+        padding: 1.5rem;
         margin: 1rem 0;
         text-align: center;
+        transition: all 0.3s ease;
+    }
+    
+    .connection-level:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(255, 107, 107, 0.2);
     }
     
     .connection-hearts {
-        font-size: 2rem;
+        font-size: 2.5rem;
         margin-bottom: 0.5rem;
+        display: block;
+        animation: heartbeat 2s infinite;
+    }
+    
+    @keyframes heartbeat {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
     }
     
     .connection-text {
         font-weight: 600;
         color: #2c3e50;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
     
     /* Vibrator mode card */
     .vibrator-card {
         background: linear-gradient(135deg, #ff6b6b, #ee5a52);
         color: white;
-        border-radius: 16px;
-        padding: 1.5rem;
-        margin: 1rem 0;
+        border-radius: 20px;
+        padding: 2rem;
+        margin: 2rem 0;
         text-align: center;
-        animation: pulse 2s infinite;
+        box-shadow: 0 15px 35px rgba(255, 107, 107, 0.4);
+        animation: pulse 3s infinite;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .vibrator-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+        animation: shimmer 2s infinite;
+    }
+    
+    @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
     }
     
     @keyframes pulse {
-        0% { transform: scale(1); }
+        0%, 100% { transform: scale(1); }
         50% { transform: scale(1.02); }
-        100% { transform: scale(1); }
+    }
+    
+    .vibrator-card h4 {
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .vibrator-card p {
+        margin: 0;
+        font-size: 1.1rem;
+        position: relative;
+        z-index: 1;
     }
     
     /* Botões */
     .stButton > button {
         width: 100%;
-        border-radius: 12px;
+        border-radius: 16px;
         border: none;
         background: linear-gradient(135deg, #ff6b6b, #ee5a52);
         color: white;
         font-weight: 600;
-        padding: 0.75rem 1.5rem;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .stButton > button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: left 0.5s;
+    }
+    
+    .stButton > button:hover::before {
+        left: 100%;
     }
     
     .stButton > button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
-    }
-    
-    /* Toggle switch para vibrador */
-    .toggle-switch {
-        position: relative;
-        display: inline-block;
-        width: 60px;
-        height: 34px;
-        margin: 1rem;
+        transform: translateY(-3px);
+        box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
     }
     
     /* Progresso do jogo */
     .game-progress {
         background: rgba(255, 255, 255, 0.9);
-        border-radius: 12px;
-        padding: 1rem;
+        border-radius: 16px;
+        padding: 1.5rem;
         margin: 1rem 0;
         text-align: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     }
     
     .progress-bar {
         background: #e9ecef;
-        border-radius: 10px;
-        height: 8px;
+        border-radius: 12px;
+        height: 12px;
         overflow: hidden;
-        margin: 0.5rem 0;
+        margin: 1rem 0;
+        position: relative;
     }
     
     .progress-fill {
         background: linear-gradient(90deg, #ff6b6b, #ee5a52);
         height: 100%;
-        border-radius: 10px;
-        transition: width 0.3s ease;
+        border-radius: 12px;
+        transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .progress-fill::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        animation: progressShine 2s infinite;
+    }
+    
+    @keyframes progressShine {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
     }
     
     /* Cards de resultado final */
     .final-card {
         background: linear-gradient(135deg, #667eea, #764ba2);
         color: white;
-        border-radius: 20px;
-        padding: 2rem;
-        margin: 1rem 0;
+        border-radius: 24px;
+        padding: 3rem;
+        margin: 2rem 0;
         text-align: center;
-        box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+        box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .final-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        animation: rotate 10s linear infinite;
+    }
+    
+    @keyframes rotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    
+    .final-card > * {
+        position: relative;
+        z-index: 1;
     }
     
     .score-display {
-        font-size: 3rem;
+        font-size: 4rem;
         font-weight: 700;
+        margin: 1.5rem 0;
+        text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    /* Checkbox personalizado para vibrador */
+    .vibrator-option {
+        background: rgba(255, 107, 107, 0.1);
+        border: 2px solid #ff6b6b;
+        border-radius: 16px;
+        padding: 1.5rem;
         margin: 1rem 0;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    
+    .vibrator-option:hover {
+        background: rgba(255, 107, 107, 0.15);
+        transform: translateY(-2px);
+    }
+    
+    /* Sugestões finais */
+    .final-suggestions {
+        background: white;
+        border-radius: 20px;
+        padding: 2rem;
+        margin: 2rem 0;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+    
+    .final-suggestions h3 {
+        color: #2c3e50;
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+    }
+    
+    .final-suggestions ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .final-suggestions li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #eee;
+        font-size: 1.1rem;
+        color: #495057;
+    }
+    
+    .final-suggestions li:last-child {
+        border-bottom: none;
     }
     
     /* Responsividade */
@@ -245,15 +453,23 @@ st.markdown("""
         }
         
         .main-title {
-            font-size: 2rem;
+            font-size: 2.2rem;
         }
         
         .question-text {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
         
         .env-icon {
-            font-size: 2.5rem;
+            font-size: 3rem;
+        }
+        
+        .environment-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .score-display {
+            font-size: 3rem;
         }
     }
     
@@ -261,6 +477,7 @@ st.markdown("""
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
     header {visibility: hidden;}
+    .stDeployButton {display: none;}
 </style>
 """, unsafe_allow_html=True)
 
@@ -297,7 +514,7 @@ def show_welcome_screen():
         "intimidade": {
             "icon": "🛏️",
             "title": "Intimidade Total",
-            "description": "Motel, quarto - momento só de vocês"
+            "description": "Motel, quarto - momento só de vocês dois"
         },
         "publico": {
             "icon": "🕯️",
@@ -317,40 +534,74 @@ def show_welcome_screen():
     }
     
     # Grid de ambientes
+    st.markdown('<div class="environment-grid">', unsafe_allow_html=True)
+    
     cols = st.columns(2)
     env_keys = list(environments.keys())
     
     for i, env_key in enumerate(env_keys):
         with cols[i % 2]:
             env = environments[env_key]
-            if st.button(f"{env['icon']} {env['title']}", key=f"env_{env_key}", help=env['description']):
+            selected_class = "selected" if st.session_state.environment == env_key else ""
+            
+            if st.button(
+                f"{env['icon']} {env['title']}", 
+                key=f"env_{env_key}",
+                help=env['description'],
+                use_container_width=True
+            ):
                 st.session_state.environment = env_key
                 st.session_state.environment_name = env['title']
                 st.rerun()
     
+    st.markdown('</div>', unsafe_allow_html=True)
+    
     # Opção de vibrador
     st.markdown("### 🔥 Modo Extra (Opcional)")
-    use_vibrator = st.checkbox("💖 Usar vibrador inteligente durante o jogo", key="vibrator_checkbox")
+    
+    st.markdown("""
+        <div class="vibrator-option">
+            <h4>💖 Vibrador Inteligente</h4>
+            <p>Quer usar um vibrador durante o jogo? O app sugerirá modos conforme a intensidade emocional aumenta!</p>
+        </div>
+    """, unsafe_allow_html=True)
+    
+    use_vibrator = st.checkbox("✨ Sim, vamos usar!", key="vibrator_checkbox")
     
     if use_vibrator:
         st.markdown("""
-            <div style="background: rgba(255, 107, 107, 0.1); padding: 1rem; border-radius: 12px; margin: 1rem 0;">
-                <p style="margin: 0; color: #2c3e50;">
-                    ✨ Perfeito! O jogo sugerirá modos de vibração conforme a intensidade emocional aumenta.
-                    Você ativará manualmente no app do seu brinquedo.
+            <div style="background: rgba(255, 107, 107, 0.1); padding: 1.5rem; border-radius: 16px; margin: 1rem 0; border: 2px solid #ff6b6b;">
+                <p style="margin: 0; color: #2c3e50; font-size: 1.1rem; text-align: center;">
+                    🔥 Perfeito! O jogo sugerirá modos de vibração conforme vocês se conectam mais profundamente.
+                    <br><strong>Você ativará manualmente no app do seu brinquedo.</strong>
                 </p>
             </div>
         """, unsafe_allow_html=True)
     
+    # Botão para começar
     if st.session_state.environment:
         st.session_state.use_vibrator = use_vibrator
-        if st.button("🚀 Começar o Jogo", type="primary"):
+        
+        # Ativa o modo vibrador na lógica do jogo
+        if use_vibrator:
+            if 'game_logic' not in st.session_state:
+                st.session_state.game_logic = GameLogic()
+            st.session_state.game_logic.activate_vibrator_mode()
+        
+        st.markdown("<br>", unsafe_allow_html=True)
+        if st.button("🚀 Começar nossa Jornada", type="primary", use_container_width=True):
             st.session_state.game_started = True
             st.session_state.current_questions = get_questions_by_phase_and_environment(
                 st.session_state.current_phase, 
                 st.session_state.environment
             )
             st.rerun()
+    else:
+        st.markdown("""
+            <div style="text-align: center; color: #6c757d; margin: 2rem 0;">
+                👆 Escolha um ambiente para começar
+            </div>
+        """, unsafe_allow_html=True)
     
     st.markdown('</div>', unsafe_allow_html=True)
 
@@ -362,26 +613,35 @@ def show_game_screen():
     col1, col2, col3 = st.columns([1, 2, 1])
     
     with col1:
-        st.markdown(f'<div class="phase-indicator">Fase {st.session_state.current_phase}</div>', unsafe_allow_html=True)
+        phase_names = {1: "Conectar", 2: "Desejar", 3: "Agir"}
+        phase_name = phase_names.get(st.session_state.current_phase, "Conectar")
+        st.markdown(f'<div class="phase-indicator">Fase {st.session_state.current_phase}: {phase_name}</div>', unsafe_allow_html=True)
     
     with col2:
-        progress = (st.session_state.question_index + 1) / len(st.session_state.current_questions) if st.session_state.current_questions else 0
-        st.markdown(f"""
-            <div class="game-progress">
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: {progress * 100}%"></div>
+        if st.session_state.current_questions:
+            progress = (st.session_state.question_index + 1) / len(st.session_state.current_questions)
+            st.markdown(f"""
+                <div class="game-progress">
+                    <div style="font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem;">
+                        Progresso da Fase
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: {progress * 100}%"></div>
+                    </div>
+                    <small style="color: #6c757d;">Pergunta {st.session_state.question_index + 1} de {len(st.session_state.current_questions)}</small>
                 </div>
-                <small>Pergunta {st.session_state.question_index + 1} de {len(st.session_state.current_questions)}</small>
-            </div>
-        """, unsafe_allow_html=True)
+            """, unsafe_allow_html=True)
     
     with col3:
         connection_level = st.session_state.game_logic.get_connection_level()
+        level_names = {1: "Carinho", 2: "Desejo", 3: "Paixão", 4: "Êxtase"}
+        level_name = level_names.get(connection_level, "Carinho")
         hearts = "💟" if connection_level == 1 else "❤️" if connection_level == 2 else "🔥" if connection_level == 3 else "💥"
+        
         st.markdown(f"""
             <div class="connection-level">
-                <div class="connection-hearts">{hearts}</div>
-                <div class="connection-text">Nível {connection_level}</div>
+                <span class="connection-hearts">{hearts}</span>
+                <div class="connection-text">Nível {connection_level}<br><small>{level_name}</small></div>
             </div>
         """, unsafe_allow_html=True)
     
@@ -398,8 +658,9 @@ def show_game_screen():
         # Ações da pergunta
         if current_question.get('action'):
             st.markdown(f"""
-                <div style="background: rgba(255, 255, 255, 0.2); padding: 1rem; border-radius: 12px; margin: 1rem 0; text-align: center; color: white;">
-                    <strong>💫 Ação especial:</strong> {current_question['action']}
+                <div class="question-action">
+                    <strong>💫 Ação Especial:</strong>
+                    <div>{current_question['action']}</div>
                 </div>
             """, unsafe_allow_html=True)
         
@@ -407,22 +668,34 @@ def show_game_screen():
         col1, col2 = st.columns(2)
         
         with col1:
-            if st.button("😊 Responderam juntos", key="answered"):
+            if st.button("😊 Respondemos juntos!", key="answered", use_container_width=True):
                 st.session_state.game_logic.add_connection_points(current_question.get('points', 1))
                 next_question()
         
         with col2:
-            if st.button("⏭️ Pular pergunta", key="skip"):
+            if st.button("⏭️ Próxima pergunta", key="skip", use_container_width=True):
                 next_question()
         
-        # Sugestão de vibrador se ativado
-        if st.session_state.use_vibrator:
-            vibrator_mode = st.session_state.game_logic.get_vibrator_mode()
-            if vibrator_mode:
+        # Sugestão de vibrador se ativado - Sistema Inteligente
+        if st.session_state.use_vibrator and st.session_state.game_logic.should_suggest_vibrator():
+            vibrator_suggestion = st.session_state.game_logic.get_vibrator_suggestion(st.session_state.environment)
+            if vibrator_suggestion:
+                
                 st.markdown(f"""
                     <div class="vibrator-card">
-                        <h4>🔥 Sugestão Vibracional</h4>
-                        <p>Ative o <strong>Modo {vibrator_mode}</strong> no outro celular e aproveitem essa intensidade juntos!</p>
+                        <h4>🔥 Controle do Vibrador - Modo {vibrator_suggestion['mode']}/9</h4>
+                        <div style="font-size: 1.2rem; margin: 1rem 0; font-weight: 600;">
+                            {vibrator_suggestion['progression']}
+                        </div>
+                        <div style="background: rgba(255,255,255,0.15); padding: 1rem; border-radius: 12px; margin: 1rem 0;">
+                            <strong>💫 {vibrator_suggestion['description']}</strong>
+                        </div>
+                        <p style="font-size: 1rem; font-style: italic; opacity: 0.9;">
+                            {vibrator_suggestion['context_message']}
+                        </p>
+                        <div style="margin-top: 1rem; text-align: center;">
+                            <small>🎯 <strong>Dica Pro:</strong> Ajustem a intensidade conforme as emoções de vocês crescem!</small>
+                        </div>
                     </div>
                 """, unsafe_allow_html=True)
     
@@ -442,15 +715,26 @@ def show_phase_completion():
     phase_names = {1: "Conectar", 2: "Desejar", 3: "Agir"}
     current_phase_name = phase_names.get(st.session_state.current_phase, "Conectar")
     
+    phase_messages = {
+        1: "Vocês criaram uma base sólida de conexão emocional! 💕",
+        2: "O desejo entre vocês está crescendo beautifully! 🔥", 
+        3: "Chegaram ao ápice da intimidade e conexão! 💥"
+    }
+    
+    message = phase_messages.get(st.session_state.current_phase, "")
+    
     st.markdown(f"""
         <div class="final-card">
             <h2>🎉 Fase {st.session_state.current_phase}: {current_phase_name} Concluída!</h2>
-            <p>Vocês estão se conectando cada vez mais profundamente.</p>
+            <p style="font-size: 1.2rem; margin: 1.5rem 0;">{message}</p>
+            <div style="font-size: 1.1rem; opacity: 0.9;">
+                Pontos de conexão nesta fase: <strong>{st.session_state.game_logic.connection_points}</strong>
+            </div>
         </div>
     """, unsafe_allow_html=True)
     
     if st.session_state.current_phase < 3:
-        if st.button("🔥 Próxima Fase", type="primary"):
+        if st.button("🔥 Próxima Fase - Vamos mais fundo!", type="primary", use_container_width=True):
             st.session_state.current_phase += 1
             st.session_state.question_index = 0
             st.session_state.current_questions = get_questions_by_phase_and_environment(
@@ -466,41 +750,104 @@ def show_final_results():
     total_score = st.session_state.game_logic.connection_points
     final_level = st.session_state.game_logic.get_connection_level()
     
+    # Mensagens personalizadas baseadas na pontuação
+    if total_score >= 40:
+        result_message = "Vocês têm uma conexão extraordinária! 🌟"
+        result_emoji = "💥"
+    elif total_score >= 30:
+        result_message = "Sua conexão é profunda e intensa! 🔥"
+        result_emoji = "🔥"
+    elif total_score >= 20:
+        result_message = "Vocês se conectam de forma linda! ❤️"
+        result_emoji = "❤️"
+    else:
+        result_message = "Um começo doce para sua jornada! 💟"
+        result_emoji = "💟"
+    
     st.markdown(f"""
         <div class="final-card">
-            <h1>💕 Jogo Concluído!</h1>
-            <div class="score-display">{total_score} pontos</div>
-            <h3>Nível Final de Conexão: {final_level} {"💥" if final_level == 4 else "🔥" if final_level == 3 else "❤️" if final_level == 2 else "💟"}</h3>
-            <p>Vocês criaram uma conexão ainda mais profunda!</p>
+            <h1>💕 Jornada Concluída!</h1>
+            <div class="score-display">{result_emoji}</div>
+            <h2>{total_score} Pontos de Conexão</h2>
+            <h3>Nível Final: {final_level}</h3>
+            <p style="font-size: 1.3rem; margin: 1.5rem 0;">{result_message}</p>
         </div>
     """, unsafe_allow_html=True)
     
-    # Sugestões finais
-    st.markdown("""
-        <div style="background: white; border-radius: 16px; padding: 2rem; margin: 1rem 0;">
-            <h3>💌 Finalize essa experiência especial:</h3>
-            <ul style="text-align: left;">
-                <li>✍️ Escrevam uma carta um para o outro para ler amanhã</li>
-                <li>📸 Compartilhem uma memória especial desta noite</li>
-                <li>🤗 Se abracem por 20 segundos em silêncio</li>
-                <li>💭 Digam três coisas que amam um no outro</li>
-            </ul>
-        </div>
+    # Sugestões finais personalizadas por ambiente
+    environment_suggestions = {
+        "intimidade": [
+            "💋 Compartilhem um beijo longo e apaixonado",
+            "✍️ Escrevam uma carta de amor um para o outro",
+            "🕯️ Acendam velas e continuem se conectando",
+            "💭 Digam três coisas que mais amam um no outro",
+            "🤗 Abracem-se em silêncio por 30 segundos"
+        ],
+        "publico": [
+            "📱 Tirem uma selfie para lembrar deste momento",
+            "🌹 Planejem um encontro ainda mais especial",
+            "💌 Enviem uma mensagem romântica um para o outro",
+            "☕ Brindem a conexão de vocês",
+            "🚶 Caminhem juntos sob as estrelas"
+        ],
+        "casa": [
+            "🍽️ Preparem uma refeição especial juntos",
+            "🛋️ Assistam ao pôr do sol abraçados",
+            "📚 Leiam um para o outro",
+            "🎵 Dancem sua música favorita",
+            "🛁 Relaxem juntos em um banho romântico"
+        ],
+        "distancia": [
+            "💻 Marquem um encontro virtual especial",
+            "📦 Enviem uma surpresa um para o outro",
+            "🌙 Olhem para a mesma lua ao mesmo tempo",
+            "📞 Façam uma ligação de boa noite",
+            "💌 Escrevam uma carta digital especial"
+        ]
+    }
+    
+    suggestions = environment_suggestions.get(st.session_state.environment, environment_suggestions["casa"])
+    
+    st.markdown(f"""
+        <div class="final-suggestions">
+            <h3>💌 Finalizem essa experiência especial:</h3>
+            <ul>
     """, unsafe_allow_html=True)
     
+    for suggestion in suggestions:
+        st.markdown(f"<li>{suggestion}</li>", unsafe_allow_html=True)
+    
+    st.markdown("</ul></div>", unsafe_allow_html=True)
+    
+    # Despedida com vibrador se ativado
     if st.session_state.use_vibrator:
         st.markdown("""
             <div class="vibrator-card">
-                <h4>🔥 Despedida Especial</h4>
-                <p>Para finalizar, ativem o <strong>Modo 9</strong> e celebrem essa conexão única que vocês têm! 💕</p>
+                <h4>🔥 Grande Final</h4>
+                <p>Para celebrar essa conexão única, ativem o <strong>Modo 9</strong> e aproveitem juntos este momento especial! 💕</p>
+                <small style="opacity: 0.9;">Vocês merecem toda essa intensidade ✨</small>
             </div>
         """, unsafe_allow_html=True)
     
-    if st.button("🔄 Jogar Novamente", type="primary"):
-        # Reset do jogo
-        for key in list(st.session_state.keys()):
-            del st.session_state[key]
-        st.rerun()
+    # Botão para reiniciar
+    st.markdown("<br><br>", unsafe_allow_html=True)
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        if st.button("🔄 Nova Jornada", type="primary", use_container_width=True):
+            # Reset do jogo
+            for key in list(st.session_state.keys()):
+                del st.session_state[key]
+            st.rerun()
+    
+    with col2:
+        if st.button("💕 Finalizar", use_container_width=True):
+            st.markdown("""
+                <div style="text-align: center; margin: 2rem 0;">
+                    <h2>Obrigado por fortalecer a conexão de vocês! 💕</h2>
+                    <p>Que esta seja apenas uma das muitas jornadas especiais juntos.</p>
+                </div>
+            """, unsafe_allow_html=True)
 
 def main():
     """Função principal do app"""
@@ -513,3 +860,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+            "
