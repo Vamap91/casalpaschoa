@@ -821,11 +821,23 @@ def show_final_results():
     
     # Despedida com vibrador se ativado
     if st.session_state.use_vibrator:
-        st.markdown("""
+        final_messages = {
+            "intimidade": "Para um gran finale inesquecível, ativem o Modo 9 e explorem todos os prazeres que descobriram juntos! 🔥💥",
+            "publico": "Agora que estão indo para casa... Modo 9 os espera para uma noite épica! 😈🔥",
+            "casa": "Em casa, vocês mandam! Modo 9 para uma celebração íntima e explosiva! 🏠💥",
+            "distancia": "Mesmo à distância, conectem-se no Modo 9 e tenham o orgasmo virtual mais intenso! 💻🔥"
+        }
+        
+        env_message = final_messages.get(st.session_state.environment, "Modo 9 para celebrar essa conexão única!")
+        
+        st.markdown(f"""
             <div class="vibrator-card">
-                <h4>🔥 Grande Final</h4>
-                <p>Para celebrar essa conexão única, ativem o <strong>Modo 9</strong> e aproveitem juntos este momento especial! 💕</p>
-                <small style="opacity: 0.9;">Vocês merecem toda essa intensidade ✨</small>
+                <h4>🔥 Grande Final - Modo 9</h4>
+                <p style="font-size: 1.2rem;">{env_message}</p>
+                <div style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.9;">
+                    <strong>🎯 Vocês merecem essa explosão de prazer!</strong><br>
+                    Todo o tesão que construíram durante o jogo culmina agora... ✨
+                </div>
             </div>
         """, unsafe_allow_html=True)
     
@@ -860,4 +872,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-            "
